@@ -1,0 +1,84 @@
+.category__section{
+    @include Display($direction:row,$content:center,$item:center,$gap:0px);
+    margin-top: 100px;
+}
+
+.category__container{
+    @include Display($direction:column,$content:center,$item:center,$gap:40px);
+    width: 1200px;
+}
+
+.category__title{
+    @include Display($direction:column,$content:start,$item:start,$gap:10px);
+    width: 575px;
+    text-align: center;
+}
+
+.category-name{
+    @include textStyle($fw:600,$fs:Medium,$fsz:36px,$lh:100%,$ls:0%,$tal:center,$color:$color-black);
+}
+
+.category-desc{
+    @include textStyle($fw:400,$fs:Medium,$fsz:16px,$lh:24px,$ls:0%,$tal:center,$color:$color-black);
+}
+
+.category__container1{
+    @include Display($direction:column,$content:center,$item:center,$gap:24px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.category__filter{
+    @include Display($direction:row,$content:start,$item:start,$gap:16px);
+    width: 476px;
+}
+
+.category__filter-item{
+    padding: 20px 40px;
+    background-color: $color-white;
+    border: 2px solid gray;
+    border-radius: 100px;
+    color: $color-black;
+    transition: all 0.3s;
+
+    &:hover{
+        background-color: $color-green;
+        border: none;
+        color: $color-white;
+        transform: scale(1.1);
+    }
+}
+
+.category__items{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+.category-item{
+    @include Display($direction:column,$content:start,$item:start,$gap:8px);
+    padding: 30px 25px;
+    background-color: $color-gray;
+    border-radius: 16px;
+}
+
+.car-static{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 66px;
+}
+
+.car{
+    @include Display($direction:column,$content:start,$item:start,$gap:24px);
+}
+.car p {
+    @include Display($direction:row,$content:start,$item:center,$gap:12px);
+}
+
+.category__view{
+    @include textStyle($fw:500,$fs:Medium,$fsz:18px,$lh:100%,$ls:0%,$tal:none,$color:$color-black);
+    @include buttonStyle($width:173px,$height:58px,$bgColor:$color-green,$padding:none,$border:none,$brr:100px);
+    margin-bottom: 60px;
+}
