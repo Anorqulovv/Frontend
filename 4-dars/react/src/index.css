@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../src/assets/fonts/rubik-v31-latin-regular.woff2') format('woff2'); 
+}
+@font-face {
+  font-display: swap; 
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../src/assets/fonts/rubik-v31-latin-500.woff2') format('woff2'); 
+}
+
+.containers{
+    width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body{
+  font-family: "Rubik", sans-serif;
+  background-image: url(./assets/images/background.png);
+}
+
+.heroImg{
+  width: 518px;
+  height: 518px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-image: url(./assets/images/hero-bg2.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
