@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Marketplace</title>
+    <script src="./tailwind.js"></script>
+</head>
+
+<body class="bg-[#2B2B2B]">
+    <!-- Header -->
+    <header class="py-4 lg:py-5 px-5 sm:px-8 lg:px-12">
+        <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="./index.html" class="inline-block">
+                <svg width="243" height="32" viewBox="0 0 243 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="25" font-family="Work Sans" font-weight="700" font-size="24" fill="white">NFT Marketplace</text>
+                </svg>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-3">
+                <nav class="flex items-center gap-2">
+                    <a class="py-3 px-5 font-semibold text-white text-base hover:text-[#A259FF] hover:scale-110 duration-300"
+                        href="#marketplace">Marketplace</a>
+                    <a class="py-3 px-5 font-semibold text-white text-base hover:text-[#A259FF] hover:scale-110 duration-300"
+                        href="#rankings">Rankings</a>
+                    <a class="py-3 px-5 font-semibold text-white text-base hover:text-[#A259FF] hover:scale-110 duration-300"
+                        href="#connect">Connect a wallet</a>
+                </nav>
+                <button
+                    class="py-4 px-8 text-white bg-[#A259FF] flex items-center justify-center gap-3 rounded-[20px] border-2 border-transparent hover:bg-transparent hover:border-[#A259FF] hover:text-[#A259FF] duration-300">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10 3.125C7.58375 3.125 5.625 5.08375 5.625 7.5C5.625 9.91625 7.58375 11.875 10 11.875C12.4162 11.875 14.375 9.91625 14.375 7.5C14.375 5.08375 12.4162 3.125 10 3.125ZM4.375 7.5C4.375 4.3934 6.8934 1.875 10 1.875C13.1066 1.875 15.625 4.3934 15.625 7.5C15.625 10.6066 13.1066 13.125 10 13.125C6.8934 13.125 4.375 10.6066 4.375 7.5Z"
+                            fill="currentColor" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.0001 13.124C8.57374 13.124 7.17251 13.4995 5.93728 14.2128C4.70205 14.926 3.67634 15.9518 2.96327 17.1872C2.79071 17.4861 2.40848 17.5886 2.10953 17.416C1.81058 17.2435 1.70812 16.8612 1.88068 16.5623C2.70345 15.1369 3.88696 13.9532 5.31223 13.1303C6.7375 12.3073 8.3543 11.874 10.0001 11.874C11.6459 11.874 13.2627 12.3073 14.688 13.1303C16.1132 13.9532 17.2968 15.1369 18.1195 16.5623C18.2921 16.8612 18.1896 17.2435 17.8907 17.416C17.5917 17.5886 17.2095 17.4861 17.0369 17.1872C16.3239 15.9518 15.2982 14.926 14.0629 14.2128C12.8277 13.4995 11.4265 13.124 10.0001 13.124Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span class="font-semibold text-base">Sign Up</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-white text-2xl">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-10 sm:py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12">
+                    <!-- Left Content -->
+                    <div class="w-full lg:w-1/2 max-w-[510px]">
+                        <h1
+                            class="font-semibold text-[28px] sm:text-[38px] lg:text-[67px] leading-[110%] text-white mb-5 capitalize">
+                            Discover digital art & Collect NFTs
+                        </h1>
+                        <p class="text-[16px] lg:text-[22px] leading-[160%] capitalize text-white mb-8">
+                            NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k
+                            NFT artists.
+                        </p>
+
+                        <!-- Desktop Button & Stats -->
+                        <div class="hidden sm:block">
+                            <button
+                                class="mb-8 py-5 px-12 text-white bg-[#A259FF] flex items-center justify-center gap-3 rounded-[20px] border-2 border-transparent hover:bg-transparent hover:border-[#A259FF] duration-300">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494Z"
+                                        fill="currentColor" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.5462 3.45406C15.8208 3.34943 14.0351 3.31002 12.2076 5.13753L7.34482 10.0003L10 12.6555L14.8627 7.79271C16.6903 5.9652 16.6508 4.17951 16.5462 3.45406Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <span class="font-semibold text-base">Get Started</span>
+                            </button>
+
+                            <!-- Stats -->
+                            <div class="flex items-center gap-8">
+                                <div class="flex flex-col">
+                                    <strong class="font-bold text-white text-[28px] leading-[140%]">240k+</strong>
+                                    <span class="text-white text-[22px] leading-[160%]">Total Sale</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <strong class="font-bold text-white text-[28px] leading-[140%]">100k+</strong>
+                                    <span class="text-white text-[22px] leading-[160%]">Auctions</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <strong class="font-bold text-white text-[28px] leading-[140%]">240k+</strong>
+                                    <span class="text-white text-[22px] leading-[160%]">Artists</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Card -->
+                    <div class="w-full lg:w-1/2 max-w-[510px] bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-lift">
+                        <img class="w-full h-[300px] sm:h-[401px] object-cover"
+                            src="./images/hero-img.png"
+                            alt="Hero NFT">
+                        <div class="px-5 py-5">
+                            <h2 class="font-semibold text-[22px] leading-[140%] text-white mb-2">Space Walking</h2>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full">
+                                    <img src="./images/avatar.png" alt="">
+                                </div>
+                                <span class="text-white text-base">Animakid</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Button & Stats -->
+                    <div class="sm:hidden w-full">
+                        <button
+                            class="w-full mb-8 py-5 px-12 text-white bg-[#A259FF] flex items-center justify-center gap-3 rounded-[20px] border-2 border-transparent hover:bg-transparent hover:border-[#A259FF] duration-300">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <span class="font-semibold text-base">Get Started</span>
+                        </button>
+
+                        <div class="flex justify-between items-center gap-4">
+                            <div class="flex flex-col">
+                                <strong class="font-bold text-white text-[22px]">240k+</strong>
+                                <span class="text-white text-base">Total Sale</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <strong class="font-bold text-white text-[22px]">100k+</strong>
+                                <span class="text-white text-base">Auctions</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <strong class="font-bold text-white text-[22px]">240k+</strong>
+                                <span class="text-white text-base">Artists</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Collection Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="mb-12 lg:mb-16">
+                    <h2 class="font-semibold text-[28px] sm:text-[38px] leading-[120%] text-white mb-2">
+                        Trending Collection
+                    </h2>
+                    <p class="text-[16px] sm:text-[22px] leading-[160%] text-white">
+                        Checkout our weekly updated trending collection.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Collection Card 1 -->
+                    <div class="flex flex-col hover-lift">
+                        <img class="w-full h-[330px] object-cover rounded-[20px]"
+                            src="./images/colorfuldog.png"
+                            alt="DSGN Animals">
+                        <div class="mt-4 flex items-center gap-4">
+                            <img class="w-[100px] h-[100px] object-cover rounded-[20px]"
+                                src="./images/caesarmushrum.png"
+                                alt="Preview">
+                            <img class="w-[100px] h-[100px] object-cover rounded-[20px]"
+                                src="./images/caesarmushrum.png"
+                                alt="Preview">
+                            <div
+                                class="w-[100px] h-[100px] bg-[#A259FF] rounded-[20px] flex items-center justify-center font-bold text-[22px] text-white">
+                                1025+
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">DSGN Animals</h3>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-[#FF6B6B]"></div>
+                                <span class="text-white text-base">MrFox</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Card 2 -->
+                    <div class="hidden sm:flex flex-col hover-lift">
+                        <img class="w-full h-[330px] object-cover rounded-[20px]"
+                            src="./images/caesarmushrum.png"
+                            alt="Magic Mushrooms">
+                        <div class="mt-4 flex items-center gap-4">
+                            <img class="w-[100px] h-[100px] object-cover rounded-[20px]"
+                                src="./images/caesarmushrum.png"
+                                alt="Preview">
+                            <img class="w-[100px] h-[100px] object-cover rounded-[20px]"
+                                src="./images/caesarmushrum.png"
+                                alt="Preview">
+                            <div
+                                class="w-[100px] h-[100px] bg-[#A259FF] rounded-[20px] flex items-center justify-center font-bold text-[22px] text-white">
+                                1025+
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Magic Mushrooms</h3>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-[#FFB84D]"></div>
+                                <span class="text-white text-base">Shroomie</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Card 3 -->
+                    <div class="hidden lg:flex flex-col hover-lift">
+                        <img class="w-full h-[330px] object-cover rounded-[20px]"
+                            src="./images/amazingrobot.png"
+                            alt="Disco Machines">
+                        <div class="mt-4 flex items-center gap-4">
+                            <img class="w-[100px] h-[100px] object-cover rounded-[20px]"
+                                src="./images/goodrobot.png"
+                                alt="Preview">
+                            <img class="w-[100px] h-[100px] object-cover rounded-[20px]"
+                                src="./images/helperrobot.png"
+                                alt="Preview">
+                            <div
+                                class="w-[100px] h-[100px] bg-[#A259FF] rounded-[20px] flex items-center justify-center font-bold text-[22px] text-white">
+                                1025+
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Disco Machines</h3>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-[#4ECDC4]"></div>
+                                <span class="text-white text-base">BeKind2Robots</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Creators Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12 lg:mb-16">
+                    <div class="mb-6 lg:mb-0">
+                        <h2 class="font-semibold text-[28px] sm:text-[38px] leading-[120%] text-white mb-2">
+                            Top creators
+                        </h2>
+                        <p class="text-[16px] sm:text-[22px] leading-[160%] text-white">
+                            Checkout Top Rated Creators on the NFT Marketplace
+                        </p>
+                    </div>
+                    <button
+                        class="hidden lg:flex py-5 px-12 text-white bg-transparent border-2 border-[#A259FF] items-center justify-center gap-3 rounded-[20px] hover:bg-[#A259FF] duration-300">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494ZM2.92969 17.0705H2.30469C2.30469 17.4157 2.58451 17.6955 2.92969 17.6955V17.0705Z" fill="currentColor"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5462 3.45406C15.8208 3.34943 14.0351 3.31002 12.2076 5.13753L7.34482 10.0003L10 12.6555L14.8627 7.79271C16.6903 5.9652 16.6508 4.17951 16.5462 3.45406ZM16.7275 2.21727C15.7298 2.07282 13.5058 2.07157 11.3237 4.25365L6.019 9.55834C5.90179 9.67555 5.83594 9.83452 5.83594 10.0003C5.83594 10.166 5.90179 10.325 6.019 10.4422L9.55806 13.9813C9.80214 14.2254 10.1979 14.2254 10.4419 13.9813L15.7466 8.67659C17.9287 6.49452 17.9275 4.27052 17.783 3.27282C17.7465 3.0058 17.6235 2.75803 17.4329 2.5674C17.2422 2.37678 16.9945 2.25382 16.7275 2.21727Z" fill="currentColor"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82625 4.95319L5.83515 4.95312H10.882C11.2272 4.95312 11.507 5.23295 11.507 5.57812C11.507 5.9233 11.2272 6.20312 10.882 6.20312H5.84399L5.83894 6.20828L5.83891 6.20825L3.30859 8.73075L3.30956 8.73094L6.583 9.38719C6.92144 9.45504 7.1408 9.78441 7.07295 10.1229C7.0051 10.4613 6.67574 10.6807 6.33729 10.6128L3.06483 9.95675C3.06464 9.95671 3.06445 9.95668 3.06426 9.95664C2.84252 9.91244 2.6369 9.80892 2.46933 9.65711C2.30162 9.50516 2.1783 9.31054 2.11254 9.094C2.04677 8.87746 2.04103 8.64712 2.09592 8.42757C2.15081 8.20802 2.26427 8.00749 2.4242 7.84738L2.42514 7.84644L2.42514 7.84644L4.95424 5.32514C5.18475 5.09151 5.49796 4.95786 5.82625 4.95319Z" fill="currentColor"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.422 8.49219C14.7672 8.49219 15.047 8.77201 15.047 9.11719V14.1641L15.0469 14.173C15.0423 14.5013 14.9086 14.8145 14.675 15.045L12.1527 17.575C11.9926 17.7349 11.7921 17.8484 11.5725 17.9033C11.353 17.9582 11.1227 17.9524 10.9061 17.8867C10.6896 17.8209 10.495 17.6976 10.343 17.5299C10.1912 17.3623 10.0877 17.1567 10.0435 16.9349C10.0434 16.9347 10.0435 16.9351 10.0435 16.9349L9.38731 13.6619C9.31946 13.3235 9.53882 12.9941 9.87727 12.9263C10.2157 12.8584 10.5451 13.0778 10.6129 13.4162L11.2694 16.6906L13.797 14.1552V9.11719C13.797 8.77201 14.0768 8.49219 14.422 8.49219Z" fill="currnetColor"/>
+                        </svg>
+
+                        <span class="font-semibold text-base">View Rankings</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Creator Cards -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            1
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Keepitreal</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            2
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">DigiLab</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            3
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">GravityOne</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            4
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Juanie</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            5
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">BlueWhale</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            6
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Mr Fox</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            7
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Shroomie</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            8
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Robotica</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            9
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">RustyRobot</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            10
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Animakid</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            11
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Dotgu</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-6 relative hover-lift">
+                        <div class="absolute top-4 left-4 w-8 h-8 bg-[#2B2B2B] rounded-full flex items-center justify-center text-[#858584] font-normal text-base">
+                            12
+                        </div>
+                        <div class="flex flex-col items-center pt-6">
+                            <img class="w-[110px] h-[110px] rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] mb-4" src="./images/discover_ava.svg" alt="logo">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Ghiblier</h3>
+                            <p class="text-base text-[#858584]">
+                                Total Sales: <span class="text-white font-normal">34.53 ETH</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Browse Categories Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <h2 class="font-semibold text-[28px] sm:text-[38px] leading-[120%] text-white mb-12 lg:mb-16">
+                    Browse Categories
+                </h2>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#FF6B6B] to-[#A259FF] flex items-center justify-center text-5xl sm:text-7xl">
+                            🎨
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Art</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#FFB84D] to-[#4ECDC4] flex items-center justify-center text-5xl sm:text-7xl">
+                            💎
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Collectibles</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#4ECDC4] to-[#A259FF] flex items-center justify-center text-5xl sm:text-7xl">
+                            🎵
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Music</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#A259FF] to-[#FF6B6B] flex items-center justify-center text-5xl sm:text-7xl">
+                            📷
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Photography</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#FFB84D] to-[#A259FF] flex items-center justify-center text-5xl sm:text-7xl">
+                            🎬
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Video</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#4ECDC4] to-[#FFB84D] flex items-center justify-center text-5xl sm:text-7xl">
+                            ⚙️
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Utility</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#FF6B6B] to-[#4ECDC4] flex items-center justify-center text-5xl sm:text-7xl">
+                            ⚽
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Sport</h3>
+                    </div>
+
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-scale cursor-pointer">
+                        <div class="h-[160px] sm:h-[240px] bg-gradient-to-br from-[#A259FF] to-[#FFB84D] flex items-center justify-center text-5xl sm:text-7xl">
+                            🌍
+                        </div>
+                        <h3 class="px-5 py-6 font-semibold text-[18px] sm:text-[22px] text-white">Virtual Worlds</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discover More NFTs Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 lg:mb-16">
+                    <div class="mb-6 sm:mb-0">
+                        <h2 class="font-semibold text-[28px] sm:text-[38px] leading-[120%] text-white mb-2">
+                            Discover More NFTs
+                        </h2>
+                        <p class="text-[16px] sm:text-[22px] leading-[160%] text-white">
+                            Explore new trending NFTs
+                        </p>
+                    </div>
+                    <button
+                        class="py-4 px-8 text-white bg-transparent border-2 border-[#A259FF] flex items-center justify-center gap-3 rounded-[20px] hover:bg-[#A259FF] duration-300">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M2.83931 6.74556C4.3292 5.25567 6.66714 3.75 10 3.75C13.3329 3.75 15.6708 5.25567 17.1607 6.74556C17.9038 7.4887 18.4397 8.23076 18.7906 8.78809C18.9664 9.06724 19.0966 9.30146 19.184 9.4683C19.2277 9.55176 19.2608 9.61849 19.2835 9.66569C19.2949 9.6893 19.3037 9.70804 19.3099 9.72157L19.3174 9.7379L19.3197 9.74306L19.3206 9.74487L19.3209 9.74558C19.321 9.74588 19.3211 9.74616 18.75 10C19.3211 10.2538 19.321 10.2541 19.3209 10.2544L19.3206 10.2551L19.3197 10.2569L19.3174 10.2621L19.3099 10.2784C19.3037 10.292 19.2949 10.3107 19.2835 10.3343C19.2608 10.3815 19.2277 10.4482 19.184 10.5317C19.0966 10.6985 18.9664 10.9328 18.7906 11.2119C18.4397 11.7692 17.9038 12.5113 17.1607 13.2544C15.6708 14.7443 13.3329 16.25 10 16.25C6.66714 16.25 4.3292 14.7443 2.83931 13.2544C2.09617 12.5113 1.5603 11.7692 1.20939 11.2119C1.03362 10.9328 0.903373 10.6985 0.815984 10.5317C0.772267 10.4482 0.739205 10.3815 0.716476 10.3343C0.705109 10.3107 0.696319 10.292 0.690066 10.2784L0.682582 10.2621L0.680256 10.2569L0.679445 10.2551L0.679127 10.2544C0.678993 10.2541 0.678868 10.2538 1.25 10C0.678868 9.74616 0.678993 9.74588 0.679127 9.74558L0.679445 9.74487L0.680256 9.74306L0.682582 9.7379L0.690066 9.72157C0.696319 9.70804 0.705109 9.6893 0.716476 9.66569C0.739205 9.61849 0.772267 9.55176 0.815984 9.4683C0.903373 9.30146 1.03362 9.06724 1.20939 8.78809C1.5603 8.23076 2.09617 7.4887 2.83931 6.74556Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5Z"
+                                fill="currentColor" />
+                        </svg>
+                        <span class="font-semibold text-base">See All</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- NFT Card 1 -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-lift">
+                        <img class="w-full h-[300px] object-cover"
+                            src="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='nft1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234A90E2;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239013FE;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23nft1)'/%3E%3Ctext x='50%25' y='50%25' font-family='Work Sans' font-size='32' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EDistant Galaxy%3C/text%3E%3C/svg%3E"
+                            alt="Distant Galaxy">
+                        <div class="px-6 py-5">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Distant Galaxy</h3>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-6 h-6 rounded-full bg-[#4A90E2]"></div>
+                                <span class="text-white text-base">MoonDancer</span>
+                            </div>
+                            <div class="flex justify-between pt-5 border-t border-[#3B3B3B]">
+                                <div>
+                                    <p class="text-[12px] text-[#858584] mb-1">Price</p>
+                                    <p class="text-base text-white font-normal">1.63 ETH</p>
+                                </div>
+                                <div>
+                                    <p class="text-[12px] text-[#858584] mb-1">Highest Bid</p>
+                                    <p class="text-base text-white font-normal">0.33 wETH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NFT Card 2 -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-lift">
+                        <img class="w-full h-[300px] object-cover"
+                            src="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='nft2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFB84D;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF6B6B;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23nft2)'/%3E%3Ctext x='50%25' y='50%25' font-family='Work Sans' font-size='32' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3ELife On Edena%3C/text%3E%3C/svg%3E"
+                            alt="Life On Edena">
+                        <div class="px-6 py-5">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">Life On Edena</h3>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-6 h-6 rounded-full bg-[#FFB84D]"></div>
+                                <span class="text-white text-base">NebulaKid</span>
+                            </div>
+                            <div class="flex justify-between pt-5 border-t border-[#3B3B3B]">
+                                <div>
+                                    <p class="text-[12px] text-[#858584] mb-1">Price</p>
+                                    <p class="text-base text-white font-normal">1.63 ETH</p>
+                                </div>
+                                <div>
+                                    <p class="text-[12px] text-[#858584] mb-1">Highest Bid</p>
+                                    <p class="text-base text-white font-normal">0.33 wETH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NFT Card 3 -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden hover-lift">
+                        <img class="w-full h-[300px] object-cover"
+                            src="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='nft3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234ECDC4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23A259FF;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23nft3)'/%3E%3Ctext x='50%25' y='50%25' font-family='Work Sans' font-size='32' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EAstroFiction%3C/text%3E%3C/svg%3E"
+                            alt="AstroFiction">
+                        <div class="px-6 py-5">
+                            <h3 class="font-semibold text-[22px] text-white mb-2">AstroFiction</h3>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-6 h-6 rounded-full bg-[#4ECDC4]"></div>
+                                <span class="text-white text-base">Spaceone</span>
+                            </div>
+                            <div class="flex justify-between pt-5 border-t border-[#3B3B3B]">
+                                <div>
+                                    <p class="text-[12px] text-[#858584] mb-1">Price</p>
+                                    <p class="text-base text-white font-normal">1.63 ETH</p>
+                                </div>
+                                <div>
+                                    <p class="text-[12px] text-[#858584] mb-1">Highest Bid</p>
+                                    <p class="text-base text-white font-normal">0.33 wETH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Magic Mushrooms Auction Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="bg-[#3B3B3B] rounded-[20px] overflow-hidden">
+                    <div class="flex flex-col lg:flex-row">
+                        <!-- Left Image -->
+                        <div class="w-full lg:w-1/2">
+                            <img class="w-full h-[300px] lg:h-[640px] object-cover"
+                                src="data:image/svg+xml,%3Csvg width='700' height='640' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='mushroom' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%23A259FF;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%239013FE;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%234A148C;stop-opacity:1' /%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='700' height='640' fill='url(%23mushroom)'/%3E%3Cellipse cx='350' cy='500' rx='250' ry='100' fill='%23FF6B6B' opacity='0.3'/%3E%3Cellipse cx='350' cy='500' rx='200' ry='80' fill='%23FFB84D' opacity='0.4'/%3E%3Ctext x='50%25' y='30%25' font-family='Work Sans' font-size='48' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EMagic%3C/text%3E%3Ctext x='50%25' y='40%25' font-family='Work Sans' font-size='48' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EMushrooms%3C/text%3E%3C/svg%3E"
+                                alt="Magic Mushrooms">
+                        </div>
+
+                        <!-- Right Content -->
+                        <div class="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="mb-8">
+                                <h2 class="font-semibold text-[28px] sm:text-[38px] lg:text-[51px] leading-[110%] text-white mb-4">
+                                    Magic Mashrooms
+                                </h2>
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div class="w-6 h-6 rounded-full bg-[#A259FF]"></div>
+                                    <span class="text-white text-base lg:text-[22px]">Shroomie</span>
+                                </div>
+                                <p class="text-white text-base lg:text-[22px] leading-[160%] mb-8">
+                                    See NFT Now
+                                </p>
+                            </div>
+
+                            <!-- Countdown Timer -->
+                            <div class="mb-8">
+                                <p class="text-white text-[12px] font-normal mb-3">Auction ends in:</p>
+                                <div class="flex gap-4">
+                                    <div class="flex flex-col">
+                                        <span class="font-bold text-[28px] lg:text-[38px] text-white">59</span>
+                                        <span class="text-[12px] text-white">Hours</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-bold text-[28px] lg:text-[38px] text-white">59</span>
+                                        <span class="text-[12px] text-white">Minutes</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-bold text-[28px] lg:text-[38px] text-white">59</span>
+                                        <span class="text-[12px] text-white">Seconds</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Place Bid Button -->
+                            <button
+                                class="w-full lg:w-auto py-5 px-12 text-white bg-[#A259FF] flex items-center justify-center gap-3 rounded-[20px] border-2 border-transparent hover:bg-transparent hover:border-[#A259FF] duration-300">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <span class="font-semibold text-base">Place Bid</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <h2 class="font-semibold text-[28px] sm:text-[38px] leading-[120%] text-white mb-12 lg:mb-16">
+                    How it works
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-8 text-center hover-lift">
+                        <div class="w-[160px] h-[160px] mx-auto mb-6 rounded-[20px] bg-gradient-to-br from-[#A259FF] to-[#9013FE] flex items-center justify-center">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="40" y="50" font-family="Work Sans" font-size="48" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="middle">💼</text>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-[22px] text-white mb-3">Setup Your wallet</h3>
+                        <p class="text-base text-white leading-[160%]">
+                            Set up your wallet of choice. Connect it to the NFT market by clicking the wallet icon in the top right corner.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-8 text-center hover-lift">
+                        <div class="w-[160px] h-[160px] mx-auto mb-6 rounded-[20px] bg-gradient-to-br from-[#A259FF] to-[#9013FE] flex items-center justify-center">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="40" y="50" font-family="Work Sans" font-size="48" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="middle">🖼️</text>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-[22px] text-white mb-3">Create Collection</h3>
+                        <p class="text-base text-white leading-[160%]">
+                            Upload your work and setup your collection. Add a description, social links and floor price.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-[#3B3B3B] rounded-[20px] p-8 text-center hover-lift">
+                        <div class="w-[160px] h-[160px] mx-auto mb-6 rounded-[20px] bg-gradient-to-br from-[#A259FF] to-[#9013FE] flex items-center justify-center">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="40" y="50" font-family="Work Sans" font-size="48" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="middle">💰</text>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-[22px] text-white mb-3">Start Earning</h3>
+                        <p class="text-base text-white leading-[160%]">
+                            Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="py-16 lg:py-20 px-5">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="bg-[#3B3B3B] rounded-[20px] p-8 lg:p-16">
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                        <!-- Left Content -->
+                        <div class="w-full lg:w-1/2">
+                            <h2 class="font-semibold text-[28px] sm:text-[38px] leading-[120%] text-white mb-4">
+                                Join our weekly digest
+                            </h2>
+                            <p class="text-base lg:text-[22px] text-white leading-[160%]">
+                                Get exclusive promotions & updates straight to your inbox.
+                            </p>
+                        </div>
+
+                        <!-- Right Form -->
+                        <div class="w-full lg:w-1/2">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <input type="email" placeholder="Enter your email here"
+                                    class="flex-1 px-6 py-4 bg-white rounded-[20px] text-[#2B2B2B] text-base outline-none border-2 border-transparent focus:border-[#A259FF]">
+                                <button
+                                    class="py-4 px-12 text-white bg-[#A259FF] flex items-center justify-center gap-3 rounded-[20px] border-2 border-transparent hover:bg-transparent hover:border-[#A259FF] duration-300 whitespace-nowrap">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.5 3.75L8.75 12.5M17.5 3.75L11.875 17.5L8.75 12.5M17.5 3.75L2.5 8.125L8.75 12.5"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="font-semibold text-base">Subscribe</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 px-5 border-t border-[#3B3B3B]">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
+                <!-- Column 1 - Brand -->
+                <div>
+                    <h3 class="font-bold text-[22px] text-white mb-6">NFT Marketplace</h3>
+                    <p class="text-[#CCCCCC] text-base leading-[160%] mb-4">
+                        NFT marketplace UI created with Anima for Figma.
+                    </p>
+                    <p class="text-[#CCCCCC] text-base mb-4">Join our community</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-8 h-8 bg-[#858584] rounded-full flex items-center justify-center hover:bg-[#A259FF] duration-300">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><text x="12" y="18" font-size="16" text-anchor="middle">D</text></svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-[#858584] rounded-full flex items-center justify-center hover:bg-[#A259FF] duration-300">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><text x="12" y="18" font-size="16" text-anchor="middle">Y</text></svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-[#858584] rounded-full flex items-center justify-center hover:bg-[#A259FF] duration-300">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><text x="12" y="18" font-size="16" text-anchor="middle">T</text></svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-[#858584] rounded-full flex items-center justify-center hover:bg-[#A259FF] duration-300">
+                            <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><text x="12" y="18" font-size="16" text-anchor="middle">I</text></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2 - Explore -->
+                <div>
+                    <h4 class="font-bold text-[22px] text-white mb-6">Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[#CCCCCC] text-base hover:text-white duration-300">Marketplace</a></li>
+                        <li><a href="#" class="text-[#CCCCCC] text-base hover:text-white duration-300">Rankings</a></li>
+                        <li><a href="#" class="text-[#CCCCCC] text-base hover:text-white duration-300">Connect a wallet</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 - Join Newsletter -->
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-[22px] text-white mb-6">Join our weekly digest</h4>
+                    <p class="text-[#CCCCCC] text-base mb-4 leading-[160%]">
+                        Get exclusive promotions & updates straight to your inbox.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email here"
+                            class="flex-1 px-5 py-3 bg-white rounded-[20px] text-[#2B2B2B] text-base outline-none">
+                        <button
+                            class="py-3 px-8 text-white bg-[#A259FF] rounded-[20px] font-semibold text-base hover:bg-[#8a3fd8] duration-300 whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-6 border-t border-[#3B3B3B]">
+                <p class="text-[#CCCCCC] text-[12px] sm:text-base">
+                    © NFT Market. Use this template freely.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
